@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model IEnumerable<UserStoriesDemo.Models.ViewModels.GroupViewModel>
+
+<div class="row">
+    
+        @foreach (var model in Model)
+        {
+            @Html.Partial("GroupCard", model);
+        }
+    
+</div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Create New Group", "Create", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+

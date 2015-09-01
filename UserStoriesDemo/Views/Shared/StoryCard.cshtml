@@ -1,0 +1,11 @@
+﻿@model UserStoriesDemo.Models.ViewModels.StoryViewModel
+
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>@Model.Title</h3>
+            @Html.ActionLink("View Story", "ViewStory", Model, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Edit Story", "EditStory", Model, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>

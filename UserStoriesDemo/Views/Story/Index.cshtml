@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model ICollection<UserStoriesDemo.Models.ViewModels.StoryViewModel>
+
+<div class="row">
+    @foreach (var model in Model)
+    {
+        @Html.Partial("StoryCard", model);
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.ActionLink("Create New Story", "Create", null, new { @class = "btn btn-primary" })
+    </div>
+    
+</div>

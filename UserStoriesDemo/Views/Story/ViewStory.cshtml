@@ -1,0 +1,34 @@
+﻿@model UserStoriesDemo.Models.ViewModels.StoryViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewStory</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Title)
+                            <p>@Model.Title</p>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Content)
+                            <p>@Model.Content</p>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Description)
+                            <p>@Model.Description</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-default" })
+    </p>
+</body>
+</html>

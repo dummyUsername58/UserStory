@@ -1,0 +1,34 @@
+﻿@model UserStoriesDemo.Models.ViewModels.GroupViewModel
+
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>@Model.Name</h2>
+                <div class="form-group">
+                    <label>Number of members: </label>
+                    <span>@Model.NumberOfMembers</span>
+                </div>
+                <div class="form-group">
+                    <label>Number of stories: </label>
+                    <span>@Model.NumberOfStories</span>
+                </div>
+              @{
+                  List<int> userGroups = ViewBag.UserGroups;
+              }
+                @if (!userGroups.Contains<int>(Model.Id.Value))
+                {
+                    @Html.ActionLink("Join Group", "JoinGroup", new { id = Model.Id.Value }, new { @class = "btn btn-primary" })
+                }
+                else
+                {
+                    <p>Already Joined</p>
+                  
+                }
+                  
+              
+            </div>
+        </div>
+    </div>
+
+
