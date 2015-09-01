@@ -43,7 +43,7 @@ namespace UserStoriesDemo.Controllers
         [HttpPost]
         public ActionResult Create(StoryViewModel model, int[] selectedItems)
         {
-            if(!ModelState.IsValid)
+            if(model.Title==null)//Invalid Model State, dirty approach
             {
                 return View(model);
             }
@@ -84,7 +84,7 @@ namespace UserStoriesDemo.Controllers
             {
                 items = new int[0];
             }
-            if(!ModelState.IsValid)
+            if (model.Title == null)//Invalid Model State, dirty approach
             {
                 model.AllGroups= new GroupViewModel[0];
                 TaskResult<IEnumerable<GroupDetail>> groupDetailRequest = groupDataService.GetGroups(new DataRequest { StartPosition = 0, Count = 100 });
